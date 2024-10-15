@@ -1,134 +1,147 @@
 /* General Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  /* Body Styling */
-  body {
-    background-color: #f7f7f7;
-    color: #333;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  /* Main App Container */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+/* Body Styling */
+body {
+  background-color: #f7f7f7;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Main App Container */
+.container {
+  width: 90%;
+  max-width: 900px; /* Increased max-width to accommodate two panels side by side */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap; /* Ensures responsiveness on smaller screens */
+  justify-content: space-between; /* Space between admin and voter panels */
+}
+
+/* Panels Styling */
+#adminActions,
+#voterActions {
+  flex: 1; /* Each panel takes equal space */
+  min-width: 45%; /* Prevents panels from shrinking too much */
+  margin: 10px;
+  background-color: #f7fafc;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#adminActions {
+  margin-right: 20px; /* Adds some spacing to the right of the admin panel */
+}
+
+/* Header Styling */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #e53e3e; /* Bold red title */
+  font-size: 28px;
+  letter-spacing: 1px;
+  width: 100%; /* Ensures header spans across both panels */
+}
+
+/* Section Titles */
+h2 {
+  color: #c53030;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+/* Buttons */
+button {
+  background-color: #e53e3e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #c53030;
+}
+
+button:disabled {
+  background-color: #f56565;
+  cursor: not-allowed;
+}
+
+/* Input Fields */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #e53e3e;
+}
+
+/* Account Info Section */
+#accountInfo {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 12px;
+  border-radius: 5px;
+  background-color: #f7fafc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+#accountInfo p {
+  color: #2d3748;
+  margin-bottom: 5px;
+}
+
+#account {
+  font-weight: bold;
+  color: #e53e3e;
+}
+
+/* Results Section */
+#results {
+  background-color: #fef2f2;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+  width: 100%; /* Takes full width */
+}
+
+pre {
+  background-color: #fff5f5;
+  padding: 12px;
+  border-radius: 5px;
+  overflow-x: auto;
+  border: 1px solid #feb2b2;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
   .container {
-    width: 90%;
-    max-width: 600px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    margin: 20px;
+    flex-direction: column; /* Stacks panels vertically on smaller screens */
   }
-  
-  /* Header Styling */
-  h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #e53e3e; /* Bold red title */
-    font-size: 28px;
-    letter-spacing: 1px;
-  }
-  
-  /* Section Titles */
-  h2 {
-    color: #c53030;
-    margin-bottom: 10px;
-    font-size: 22px;
-  }
-  
-  /* Buttons */
-  button {
-    background-color: #e53e3e;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 12px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;
-    margin-top: 10px;
-    font-weight: bold;
-  }
-  
-  button:hover {
-    background-color: #c53030;
-  }
-  
-  button:disabled {
-    background-color: #f56565;
-    cursor: not-allowed;
-  }
-  
-  /* Input Fields */
-  input {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #e2e8f0;
-    border-radius: 5px;
-    transition: border-color 0.3s;
-  }
-  
-  input:focus {
-    outline: none;
-    border-color: #e53e3e;
-  }
-  
-  /* Account Info Section */
-  #accountInfo {
-    text-align: center;
-    margin-bottom: 20px;
-    padding: 12px;
-    border-radius: 5px;
-    background-color: #f7fafc;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  #accountInfo p {
-    color: #2d3748;
-    margin-bottom: 5px;
-  }
-  
-  #account {
-    font-weight: bold;
-    color: #e53e3e;
-  }
-  
-  /* Results Section */
-  #results {
-    background-color: #fef2f2;
-    padding: 15px;
-    border-radius: 5px;
-    margin-top: 20px;
-  }
-  
-  pre {
-    background-color: #fff5f5;
-    padding: 12px;
-    border-radius: 5px;
-    overflow-x: auto;
-    border: 1px solid #feb2b2;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 600px) {
-    .container {
-      padding: 20px;
-    }
-  
-    h1 {
-      font-size: 24px;
-    }
-  
-    button {
-      padding: 10px;
-    }
-  }
-  
+}
